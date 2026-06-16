@@ -1,56 +1,85 @@
-# DataPilot AI 🚀
+# 🚀 DataPilot AI — Automated Data Science Platform
 
-DataPilot AI is an end-to-end Automated Exploratory Data Analysis (EDA), LLM Insights, and AutoML platform. It allows users to upload a CSV dataset and get immediate insights, data preprocessing, and trained machine learning models without writing code.
+> Upload a CSV. Get AI-powered insights in seconds.
 
-## Tech Stack
-- **Frontend**: React, Vite, TypeScript, Tailwind CSS, Recharts, Framer Motion
-- **Backend**: Python, FastAPI, Pandas, Scikit-learn, XGBoost, LightGBM
-- **LLM Integration**: Groq API (llama3-70b-8192 model)
+**Live Demo:** https://datapilot-ai-seven.vercel.app
 
-## Folder Structure
-- `/frontend` - Contains the React Single Page Application.
-- `/backend` - Contains the FastAPI python backend.
+![DataPilot AI](https://img.shields.io/badge/Status-Live-brightgreen)
+![React](https://img.shields.io/badge/React-TypeScript-blue)
+![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688)
+![Groq](https://img.shields.io/badge/LLM-Groq-orange)
 
-## Local Setup Instructions
+---
 
-### 1. Backend Setup
-Make sure you have Python 3.9+ installed.
+## ✨ Features
+
+- 📊 **Auto EDA** — Instant distributions, correlations, outlier detection across 3 levels
+- 🤖 **LLM Insights** — AI-generated data insights and stories powered by Groq + LLaMA 3
+- 💬 **Chat with Dataset** — Ask natural language questions about your data
+- 🧹 **Smart Preprocessing** — Step-by-step wizard for cleaning and transforming data
+- 🏋️ **AutoML** — Train 8 models in parallel, get ranked leaderboard with metrics
+- 📄 **Report Export** — Download full PDF analysis report
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | React, TypeScript, Tailwind CSS, Recharts, Framer Motion |
+| Backend | FastAPI, Python |
+| LLM | Groq API (LLaMA 3 70B) + LangChain |
+| ML | Scikit-learn, XGBoost, LightGBM |
+| Deployment | Vercel (Frontend) + Render (Backend) |
+
+---
+
+## 🚀 Live Demo
+
+👉 **[datapilot-ai-seven.vercel.app](https://datapilot-ai-seven.vercel.app)**
+
+> Note: Backend runs on Render free tier — first request may take 50 seconds to wake up.
+
+---
+
+## 🖥️ Local Setup
+
+### Backend
 ```bash
 cd backend
-python -m venv venv
-# On Windows:
-venv\Scripts\activate
-# On Mac/Linux:
-source venv/bin/activate
-
 pip install -r requirements.txt
-```
-
-Run the backend server:
-```bash
 uvicorn main:app --reload --port 8000
 ```
-The backend API will be available at `http://localhost:8000`.
 
-### 2. Frontend Setup
-Make sure you have Node.js and npm installed.
+### Frontend
 ```bash
 cd frontend
 npm install
-```
-
-Run the development server:
-```bash
 npm run dev
 ```
-The frontend will be available at `http://localhost:5173`.
 
-## Environment Variables
-To use the LLM Insights module, you need a Groq API key.
-You can either:
-1. Provide it directly in the UI under the "LLM Insights" page.
-2. Set it as an environment variable in your backend environment: `export GROQ_API_KEY=your_key_here`.
+### Environment
+Get a free Groq API key at [console.groq.com](https://console.groq.com) and enter it in the app settings.
 
-## Deployment
-- **Frontend**: Connect the `frontend/` folder to Vercel for auto-deployment.
-- **Backend**: Connect the `backend/` folder to Render.com as a Web Service using the command `uvicorn main:app --host 0.0.0.0 --port 10000`. Set the necessary environment variables in the Render dashboard.
+---
+
+## 📁 Project Structure
+datapilot-ai/
+
+├── frontend/          # React + Vite + TypeScript
+
+│   └── src/
+
+│       ├── pages/     # Dashboard, EDA, LLM, Preprocessing, AutoML
+
+│       ├── components/
+
+│       └── api/
+
+├── backend/           # FastAPI + Python
+
+│   ├── api/           # Route handlers
+
+│   ├── services/      # EDA, ML, LLM services
+
+│   └── core/          # Session management
